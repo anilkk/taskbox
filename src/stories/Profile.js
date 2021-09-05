@@ -1,16 +1,15 @@
 import React from 'react';
-const imageStyle = {
-  maxWidth: '200px',
-};
+import '../styles/tailwind.css';
+
 export default function Profile({ name, role, company,  imageUrl}) {
   return (
-    <div>
+    <div className="flex flex-col">
       <div>
-        <img src={imageUrl} alt="profile" style={imageStyle}/>
+        <img src={imageUrl} alt="profile" className="max-w-xs w-60 rounded-lg" />
       </div>
-      <h2>Name: {name}</h2>
-      <h3>Role: {role}</h3>
-      <h3>Company: {company}</h3>
+      <h1 className="text-xl"><span className="font-bold">Name: </span>{name}</h1>
+      <h3 className="text-xl"><span className="font-bold">Role: </span>{role}</h3>
+      <h3 className="text-xl"><span className="font-bold">Company: </span>{company}</h3>
     </div>
   );
 }
